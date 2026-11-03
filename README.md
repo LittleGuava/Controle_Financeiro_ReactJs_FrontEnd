@@ -17,7 +17,7 @@ Roda os testes uma vez com [Vitest](https://vitest.dev/) (ambiente jsdom).
 
 ### `npm run build`
 
-Checa os tipos do `vite.config.mts` e gera o build de produção na pasta `build`.
+Checa os tipos do `vite.config.mts` e gera o build de produção na pasta `build`, para Chrome 87+, Edge 88+, Firefox 78+ e Safari 14+ (`build.target`).
 
 ### `npm run preview`
 
