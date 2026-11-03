@@ -4,7 +4,7 @@ import InputCustomizado from './Componentes/InputCustomizado';
 import PubSub from 'pubsub-js';
 import ManageErrors from './ManageErrors';
 
-class ExpenseForm extends Component{
+class GainForm extends Component{
 	constructor(){
 		super();
 		this.state = {lista:[], description:'', value:'', date:''};
@@ -21,7 +21,7 @@ class ExpenseForm extends Component{
 		console.log("dados sendo enviados");
 
 		$.ajax({
-			url:"https://controle-financeiro-teste.herokuapp.com/api/expenses" ,
+			url:"https://controle-financeiro-teste.herokuapp.com/api/gains" ,
 			contentType: 'application/json',
 			dataType: 'json',
 			accept: 'application/vnd.projetofase8.v2',
@@ -49,7 +49,7 @@ class ExpenseForm extends Component{
 
 					PubSub.publish('atualiza-lista-receitas', novaLista);
 					alert("Receita cadastrada com sucesso!");
-					this.setState({description:'', valeu:'', date:''});
+					this.setState({description:'', value:'', date:''});
 
 					this.guardaDados = {};
 				}.bind(this), 10);
@@ -99,7 +99,7 @@ class ExpenseForm extends Component{
 	render(){
 		return(
 			<div>
-				<h1 class="h2">Cadastro de Receitas</h1>
+				<h1 className="h2">Cadastro de Receitas</h1>
 				<form onSubmit={this.enviaForm} method="post">
 
 					<InputCustomizado type="description" id="description" name="description" value={this.state.description} onChange={this.setDescription} placeholder="Descrição" label="Descrição"/>
@@ -108,7 +108,7 @@ class ExpenseForm extends Component{
 
 					<InputCustomizado type="date" id="date" name="date" value={this.state.date} onChange={this.setDate} placeholder="Data" label="Data"/>
 
-					<button type="submit" class="btn btn-primary">Cadastrar</button>
+					<button type="submit" className="btn btn-primary">Cadastrar</button>
 
 				</form>
 				</div> 
@@ -116,7 +116,7 @@ class ExpenseForm extends Component{
 	}
 }
 
-class ExpenseTable extends Component{
+class GainTable extends Component{
 	
 	constructor(){
 		super();
@@ -148,13 +148,13 @@ class ExpenseTable extends Component{
 					</thead>
 					<tbody>
 					{
-						this.state.lista.map(function(expense){
+						this.state.lista.map(function(gain){
 							return(
-								<tr key={expense.id}>
-									<td>{expense.id}</td>
-									<td>{expense.description}</td>
-									<td>{expense.value}</td>
-									<td>{expense.date}</td>
+								<tr key={gain.id}>
+									<td>{gain.id}</td>
+									<td>{gain.description}</td>
+									<td>{gain.value}</td>
+									<td>{gain.date}</td>
 								</tr>
 							);
 
@@ -168,14 +168,14 @@ class ExpenseTable extends Component{
 	}
 }
 
-export default class ExpenseBox extends Component{
+export default class GainBox extends Component{
 	render(){
 		return (
 			<main role="main" className="col-md-9 ml-sm-auto col-lg-10 px-4">
 			<div>
-				<ExpenseForm/>
+				<GainForm/>
 				<br/>
-				<ExpenseTable/>
+				<GainTable/>
 			</div>
 			</main>
 		);

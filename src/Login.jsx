@@ -77,13 +77,13 @@ export default class Login extends Component {
 			<main role="main" className="col-md-9 ml-sm-auto col-lg-10 px-4">
 				<br/>
 				<div>
-				<h1 class="h2">Login</h1>
+				<h1 className="h2">Login</h1>
 				<form onSubmit={this.enviaForm} method="post">
 
 					<InputCustomizado type="email" id="email" name="email" value={this.state.email} onChange={this.setEmail} placeholder="E-mail" label="E-mail"/>
 					<InputCustomizado type="password" id="password" name="password" value={this.state.password} onChange={this.setPassword} placeholder="Senha" label="Senha"/>
 
-					<button type="submit" class="btn btn-primary">Entrar</button>
+					<button type="submit" className="btn btn-primary">Entrar</button>
 
 				</form>
 				</div> 
