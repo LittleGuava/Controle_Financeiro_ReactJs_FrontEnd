@@ -99,7 +99,7 @@ class GainForm extends Component{
 	render(){
 		return(
 			<div>
-				<h1 class="h2">Cadastro de Receitas</h1>
+				<h1 className="h2">Cadastro de Receitas</h1>
 				<form onSubmit={this.enviaForm} method="post">
 
 					<InputCustomizado type="description" id="description" name="description" value={this.state.description} onChange={this.setDescription} placeholder="Descrição" label="Descrição"/>
@@ -108,7 +108,7 @@ class GainForm extends Component{
 
 					<InputCustomizado type="date" id="date" name="date" value={this.state.date} onChange={this.setDate} placeholder="Data" label="Data"/>
 
-					<button type="submit" class="btn btn-primary">Cadastrar</button>
+					<button type="submit" className="btn btn-primary">Cadastrar</button>
 
 				</form>
 				</div> 

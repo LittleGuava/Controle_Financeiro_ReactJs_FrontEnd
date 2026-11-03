@@ -223,7 +223,7 @@ export default class Dashboard extends Component {
 				<br/>
 				<h2>Painel de Controle</h2>
 
-				<div class="table-responsive">
+				<div className="table-responsive">
 					<h2>Saldo</h2>
 					<table>
 						<thead>
